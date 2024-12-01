@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import DetailPageHeader from "../components/DetailPageHeader";
 import DetailPageImages from "../components/DetailPageImages";
 import DetailPageInfo from "../components/DetailPageInfo";
+import Footer from "../components/Footer";
 
 const DetailPage = () => {
   const { id } = useParams();
@@ -60,33 +61,36 @@ const DetailPage = () => {
   }
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="container mx-auto px-4 py-8">
-        {/* Restaurant Header */}
-        <DetailPageHeader
-          name={restaurant.name}
-          description={restaurant.description}
-          liked={liked}
-          setLiked={setLiked}
-          shared={shared}
-          setShared={setShared}
-        />
+      <div className="flex-grow">
+        <div className="container mx-auto px-4 py-8">
+          {/* Restaurant Header */}
+          <DetailPageHeader
+            name={restaurant.name}
+            description={restaurant.description}
+            liked={liked}
+            setLiked={setLiked}
+            shared={shared}
+            setShared={setShared}
+          />
 
-        {/* Restaurant Images */}
-        <DetailPageImages
-          imageURL={restaurant.imageURL}
-          additionalImages={restaurant.additionalImages}
-        />
+          {/* Restaurant Images */}
+          <DetailPageImages
+            imageURL={restaurant.imageURL}
+            additionalImages={restaurant.additionalImages}
+          />
 
-        {/* Restaurant Info */}
-        <DetailPageInfo
-          address={restaurant.address}
-          phone={restaurant.number}
-          website={restaurant.website}
-        />
+          {/* Restaurant Info */}
+          <DetailPageInfo
+            address={restaurant.address}
+            phone={restaurant.number}
+            website={restaurant.website}
+          />
+        </div>
       </div>
-    </>
+      <Footer />
+    </div>
   );
 };
 

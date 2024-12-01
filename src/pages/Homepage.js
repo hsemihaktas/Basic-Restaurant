@@ -9,6 +9,7 @@ import AttractionsArea from "../components/HomePageAttractionsArea";
 import HowItWorksSection from "../components/HomePageHowItWorksSection";
 import ShoppingArea from "../components/HomePageShoppingArea";
 import HealthArea from "../components/HomePageHealthArea";
+import Footer from "../components/Footer"
 
 
 const HomePage = () => {
@@ -54,6 +55,7 @@ const HomePage = () => {
 
       {/* HealthArea Gösterimi */}
       {categoriesToShow.includes("Health") && <HealthArea/>}
+      <Footer/>
     </div>
   );
 };

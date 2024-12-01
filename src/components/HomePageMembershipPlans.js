@@ -3,16 +3,12 @@ import React from "react";
 const MembershipPlans = () => {
   return (
     <div className="h-1/2">
-        <div
-            className="relative py-16 px-4"
-            style={{
-                backgroundColor: "#00A79D", // Arka plan rengi
-                backgroundImage: `url('/images/membership-bg.png')`, // Arka plan deseni
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-            }}
-        >
+      <div
+        className="relative bg-contain px-8 lg:px-64"
+        style={{
+          backgroundImage: `url('/images/membership-bg.png')`, // Arka plan resmi
+        }}
+      >
         <div className="flex">
           <div className="mx-auto flex flex-wrap items-center justify-between">
             {/* Sol taraf: Yazılar ve kartlar */}

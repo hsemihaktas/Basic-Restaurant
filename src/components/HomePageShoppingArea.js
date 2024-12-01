@@ -29,7 +29,6 @@ const HomePageShoppingArea = () => {
           return response.json();
         })
         .then((data) => {
-          console.log("Fetched restaurants:", data);
           setRestaurants(data);
         })
         .catch((error) => {

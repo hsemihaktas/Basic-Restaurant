@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import FilterArea from "../components/HomePageFilterArea";
 import DiningArea from "../components/HomePageDiningArea";
+import MembershipPlans from "../components/HomePageMembershipPlans";
 import AttractionsArea from "../components/HomePageAttractionsArea";
 import ShoppingArea from "../components/HomePageShoppingArea";
 import HealthArea from "../components/HomePageHealthArea";
@@ -38,6 +39,8 @@ const HomePage = () => {
 
       {/* DiningArea Gösterimi */}
       {categoriesToShow.includes("Dining") && <DiningArea />}
+
+      <MembershipPlans />
 
       {/* AttractionsArea Gösterimi */}
       {categoriesToShow.includes("Attractions") && <AttractionsArea/>}

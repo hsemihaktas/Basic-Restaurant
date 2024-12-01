@@ -50,7 +50,7 @@ const DetailPageHeader = ({ name, description, liked, setLiked, shared, setShare
       </div>
 
       {/* Description Section */}
-      <div className="w-1/2 text-lg text-gray-700 mb-8">
+      <div className="w-1/2 text-lg text-gray-800 mb-8">
         <p>{description}</p>
       </div>
     </>

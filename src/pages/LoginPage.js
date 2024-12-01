@@ -42,7 +42,7 @@ const LoginPage = () => {
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-700 mb-2" htmlFor="username">
+            <label className="block text-gray-800 mb-2" htmlFor="username">
               Username
             </label>
             <input
@@ -56,7 +56,7 @@ const LoginPage = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block text-gray-700 mb-2" htmlFor="password">
+            <label className="block text-gray-800 mb-2" htmlFor="password">
               Password
             </label>
             <input

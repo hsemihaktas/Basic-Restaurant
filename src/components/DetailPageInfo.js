@@ -6,29 +6,29 @@ const DetailPageInfo = ({ address, phone, website }) => {
     <div className="w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {/* Address */}
       <div className="bg-white p-6">
-        <h4 className="text-xl font-semibold text-gray-900 mb-2 inline-block underline mr-2">
+        <h4 className="text-xl font-semibold text-gray-800 mb-2 inline-block underline mr-2">
           <FaMapMarkerAlt className="inline mr-2 text-teal-700" />
           Address:
         </h4>
-        <p className="text-gray-700 inline">{address}</p>
+        <p className="text-gray-600 inline">{address}</p>
       </div>
 
       {/* Phone Number */}
       <div className="bg-white p-6">
-        <h4 className="text-xl font-semibold text-gray-900 mb-2 inline-block underline mr-2">
+        <h4 className="text-xl font-semibold text-gray-800 mb-2 inline-block underline mr-2">
           <FaPhoneAlt className="inline mr-2 text-teal-700" />
           Phone:
         </h4>
-        <p className="text-gray-700 inline">{phone}</p>
+        <p className="text-gray-600 inline">{phone}</p>
       </div>
 
       {/* Website */}
       <div className="bg-white p-6">
-        <h4 className="text-xl font-semibold text-gray-900 mb-2 inline-block underline mr-2">
+        <h4 className="text-xl font-semibold text-gray-800 mb-2 inline-block underline mr-2">
           <FaGlobe className="inline mr-2 text-teal-700" />
           Web:
         </h4>
-        <p className="text-gray-700 inline">{website}</p>
+        <p className="text-gray-600 inline">{website}</p>
       </div>
     </div>
   );

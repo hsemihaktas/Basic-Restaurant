@@ -15,13 +15,13 @@ const HomePageFilterArea = ({ onMembershipChange }) => {
   // Filtre renk mantığı
   const getFilterColor = (filterIndex) => {
     if (selectedMembership === "Silver") {
-      return filterIndex < 2 ? "text-black" : "text-gray-400";
+      return filterIndex < 2 ? "text-black" : "text-gray-500";
     } else if (selectedMembership === "Gold") {
-      return filterIndex < 3 ? "text-yellow-500" : "text-gray-400";
+      return filterIndex < 3 ? "text-yellow-500" : "text-gray-500";
     } else if (selectedMembership === "Diamond") {
       return "text-blue-500";
     }
-    return "text-gray-400"; // Default renk
+    return "text-gray-500";
   };
 
   const handleMembershipChange = (membership) => {

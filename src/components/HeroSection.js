@@ -2,7 +2,7 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <section className="bg-gray-800 text-white h-[70vh] flex flex-col lg:flex-row justify-between items-center  bg-cover bg-bottom"
+    <section className="bg-gray-800 text-white h-[70vh] flex  flex-row justify-between items-center  bg-cover bg-bottom"
       style={{
         backgroundImage: "url('/images/HeroSection.jpeg')",
       }}
@@ -15,7 +15,7 @@ const HeroSection = () => {
       </div>
 
       {/* Sağdaki Düğme */}
-      <div className="flex justify-center lg:justify-end h-full items-center">
+      <div className="flex justify-end h-full items-center">
         <button className="px-6 py-3 bg-teal-500 text-white font-semibold rounded-l-lg rounded-r-none shadow-lg hover:bg-teal-600">
           Buy Now!
         </button>

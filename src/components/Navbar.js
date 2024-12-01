@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaSearch, FaHeart, FaUser } from "react-icons/fa";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link, useNavigate } from "react-router-dom"; // Import Link and useNavigate
 
 const Navbar = () => {
+  const [showLogout, setShowLogout] = useState(false); // State to toggle logout options
+  const navigate = useNavigate(); // Use navigate hook for redirecting
+
+  const handleLogout = () => {
+    // Remove token from localStorage
+    localStorage.removeItem("token");
+    // Redirect to login page
+    navigate("/login");
+  };
+
   return (
     <nav className="bg-white shadow-md rounded-br-3xl">
       <div className="container mx-auto flex justify-between items-center p-4">
@@ -35,7 +45,7 @@ const Navbar = () => {
         </ul>
 
         {/* Icons */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 relative">
           {/* Search */}
           <button className="p-2 bg-gray-100 text-teal-700 rounded-full hover:bg-gray-200">
             <FaSearch />
@@ -47,9 +57,24 @@ const Navbar = () => {
           </button>
 
           {/* User Profile */}
-          <button className="p-2 bg-gray-100 text-teal-700 rounded-full hover:bg-gray-200">
+          <button
+            className="p-2 bg-gray-100 text-teal-700 rounded-full hover:bg-gray-200"
+            onClick={() => setShowLogout(!showLogout)} // Toggle the logout options
+          >
             <FaUser />
           </button>
+
+          {/* Logout Dropdown */}
+          {showLogout && (
+            <div className="absolute top-full right-0 mt-2 p-2 bg-white shadow-md rounded-lg w-32">
+              <button
+                onClick={handleLogout}
+                className="w-full text-left px-4 py-2 text-teal-700 hover:bg-gray-100 rounded-lg"
+              >
+                Logout
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </nav>

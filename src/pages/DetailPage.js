@@ -1,34 +1,39 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
 import Navbar from "../components/Navbar";
+import DetailPageHeader from "../components/DetailPageHeader";
+import DetailPageImages from "../components/DetailPageImages";
+import DetailPageInfo from "../components/DetailPageInfo";
 
-const RestaurantDetail = () => {
-  const { id } = useParams(); // URL'den restaurant ID'yi al
+const DetailPage = () => {
+  const { id } = useParams();
   const [restaurant, setRestaurant] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [liked, setLiked] = useState(false);
+  const [shared, setShared] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem("token"); // localStorage'dan token'ı al
+    const token = localStorage.getItem("token");
 
-    // Eğer token yoksa, kullanıcıyı login sayfasına yönlendirebilirsiniz
     if (!token) {
       setError("Unauthorized: No token found");
       setLoading(false);
       return;
     }
 
-    // API'den restaurant verilerini çek
     const fetchRestaurantDetails = async () => {
       try {
-        const response = await fetch(`https://localhost:7181/api/Restaurant/GetDetail?id=${id}`, {
-          method: "GET",
-          headers: {
-            Accept: "application/json",
-            Authorization: `Bearer ${token}`, // Token'ı header olarak gönder
-          },
-        });
+        const response = await fetch(
+          `https://localhost:7181/api/Restaurant/GetDetail?id=${id}`,
+          {
+            method: "GET",
+            headers: {
+              Accept: "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
         if (!response.ok) {
           throw new Error("Failed to fetch restaurant details");
@@ -36,7 +41,7 @@ const RestaurantDetail = () => {
 
         const data = await response.json();
         setRestaurant(data);
-        setLoading(false); // Veriler başarıyla alındığında loading'i kapat
+        setLoading(false);
       } catch (error) {
         setError(error.message);
         setLoading(false);
@@ -56,22 +61,33 @@ const RestaurantDetail = () => {
 
   return (
     <>
-    <Navbar/>
-    <div className="restaurant-detail">
-      <h2>{restaurant.name}</h2>
-      <img
-        src={`https://localhost:7181${restaurant.imageURL}`}
-        alt={restaurant.name}
-        className="w-full h-48 object-cover rounded-2xl"
-      />
-      <p><strong>Category:</strong> {restaurant.categoryName}</p>
-      <p><strong>Description:</strong> {restaurant.description}</p>
-      <p><strong>Address:</strong> {restaurant.address}</p>
-      <p><strong>Likes:</strong> {restaurant.numberOfLikes}</p>
-      <p><strong>Shares:</strong> {restaurant.numberOfShares}</p>
-    </div>
+      <Navbar />
+      <div className="container mx-auto px-4 py-8">
+        {/* Restaurant Header */}
+        <DetailPageHeader
+          name={restaurant.name}
+          description={restaurant.description}
+          liked={liked}
+          setLiked={setLiked}
+          shared={shared}
+          setShared={setShared}
+        />
+
+        {/* Restaurant Images */}
+        <DetailPageImages
+          imageURL={restaurant.imageURL}
+          additionalImages={restaurant.additionalImages}
+        />
+
+        {/* Restaurant Info */}
+        <DetailPageInfo
+          address={restaurant.address}
+          phone={restaurant.number}
+          website={restaurant.website}
+        />
+      </div>
     </>
   );
 };
 
-export default RestaurantDetail;
+export default DetailPage;

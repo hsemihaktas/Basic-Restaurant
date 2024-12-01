@@ -1,6 +1,6 @@
 import React from "react";
 
-const MembershipPlans = () => {
+const HomePageMembershipPlans = () => {
   return (
     <div className="h-1/2">
       <div
@@ -59,4 +59,4 @@ const MembershipPlans = () => {
   );
 };
 
-export default MembershipPlans;
+export default HomePageMembershipPlans;

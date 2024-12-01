@@ -6,8 +6,10 @@ import FilterArea from "../components/HomePageFilterArea";
 import DiningArea from "../components/HomePageDiningArea";
 import MembershipPlans from "../components/HomePageMembershipPlans";
 import AttractionsArea from "../components/HomePageAttractionsArea";
+import HowItWorksSection from "../components/HomePageHowItWorksSection";
 import ShoppingArea from "../components/HomePageShoppingArea";
 import HealthArea from "../components/HomePageHealthArea";
+
 
 const HomePage = () => {
   const [selectedMembership, setSelectedMembership] = useState("Silver");
@@ -44,6 +46,8 @@ const HomePage = () => {
 
       {/* AttractionsArea Gösterimi */}
       {categoriesToShow.includes("Attractions") && <AttractionsArea/>}
+
+      <HowItWorksSection />
 
       {/* ShoppingArea Gösterimi */}
       {categoriesToShow.includes("Shopping") && <ShoppingArea/>}

@@ -1,18 +1,58 @@
 import React from "react";
+import { FaSearch, FaHeart, FaUser } from "react-icons/fa";
 
 const Navbar = () => {
-    return (
-        <nav className="bg-blue-700 text-white p-4">
-            <div className="container mx-auto flex justify-between items-center">
-                <h1 className="text-2xl font-bold">Explore Türkiye</h1>
-                <ul className="flex space-x-4">
-                    <li><a href="#" className="hover:underline">Home</a></li>
-                    <li><a href="#" className="hover:underline">Tours</a></li>
-                    <li><a href="#" className="hover:underline">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    );
+  return (
+    <nav className="bg-white shadow-md rounded-br-3xl">
+      <div className="container mx-auto flex justify-between items-center p-4">
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          <img
+            src="/images/NavbarLogo.png"
+            alt="Logo"
+            className="h-10 w-auto"
+          />
+        </div>
+
+        {/* Menu Items */}
+        <ul className="hidden md:flex space-x-8">
+          <li>
+            <a href="#" className="text-gray-700 hover:text-teal-700">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-700 hover:text-teal-700">
+              Tours
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-gray-700 hover:text-teal-700">
+              Contact
+            </a>
+          </li>
+        </ul>
+
+        {/* Icons */}
+        <div className="flex items-center space-x-4">
+          {/* Search */}
+          <button className="p-2 bg-gray-100 text-teal-700 rounded-full hover:bg-gray-200">
+            <FaSearch />
+          </button>
+
+          {/* Favorites */}
+          <button className="p-2 bg-gray-100 text-teal-700 rounded-full hover:bg-gray-200">
+            <FaHeart />
+          </button>
+
+          {/* User Profile */}
+          <button className="p-2 bg-gray-100 text-teal-700 rounded-full hover:bg-gray-200">
+            <FaUser />
+          </button>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;

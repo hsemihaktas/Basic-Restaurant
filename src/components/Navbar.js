@@ -1,5 +1,6 @@
 import React from "react";
 import { FaSearch, FaHeart, FaUser } from "react-icons/fa";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const Navbar = () => {
   return (
@@ -17,19 +18,19 @@ const Navbar = () => {
         {/* Menu Items */}
         <ul className="hidden md:flex space-x-8">
           <li>
-            <a href="#" className="text-gray-700 hover:text-teal-700">
+            <Link to="/" className="text-gray-700 hover:text-teal-700">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="text-gray-700 hover:text-teal-700">
+            <Link to="/tours" className="text-gray-700 hover:text-teal-700">
               Tours
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="text-gray-700 hover:text-teal-700">
+            <Link to="/contact" className="text-gray-700 hover:text-teal-700">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
 

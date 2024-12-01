@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaUtensils, FaCamera, FaShoppingBag, FaHeartbeat } from "react-icons/fa"; // İkonlar
 
-const FilterArea = ({ onMembershipChange }) => {
+const HomePageFilterArea = ({ onMembershipChange }) => {
   const [selectedMembership, setSelectedMembership] = useState("Silver");
 
   // Tüm filtreler ve ikonları
@@ -90,4 +90,4 @@ const FilterArea = ({ onMembershipChange }) => {
   );
 };
 
-export default FilterArea;
+export default HomePageFilterArea;

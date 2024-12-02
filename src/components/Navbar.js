@@ -1,20 +1,18 @@
 import React, { useState } from "react";
-import { FaSearch, FaHeart, FaUser } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom"; // Import Link and useNavigate
+import { FaSearch, FaHeart, FaUser, FaHome, FaCreditCard } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const [showLogout, setShowLogout] = useState(false); // State to toggle logout options
-  const navigate = useNavigate(); // Use navigate hook for redirecting
+  const [showLogout, setShowLogout] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Remove token from localStorage
     localStorage.removeItem("token");
-    // Redirect to login page
     navigate("/login");
   };
 
   return (
-    <nav className="bg-white shadow-md rounded-br-3xl">
+    <nav className="bg-teal-500 shadow-md">
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Logo */}
         <div className="flex items-center space-x-2">
@@ -25,43 +23,46 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Menu Items */}
-        <ul className="hidden md:flex space-x-8">
-          <li>
-            <Link to="/" className="text-gray-800 hover:text-teal-700">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/tours" className="text-gray-800 hover:text-teal-700">
-              Tours
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="text-gray-800 hover:text-teal-700">
-              Contact
-            </Link>
-          </li>
-        </ul>
-
-        {/* Icons */}
-        <div className="flex items-center space-x-4 relative">
-          {/* Search */}
-          <button className="p-2 bg-gray-100 text-teal-700 rounded-full hover:bg-gray-200">
-            <FaSearch />
-          </button>
-
-          {/* Favorites */}
-          <button className="p-2 bg-gray-100 text-teal-700 rounded-full hover:bg-gray-200">
-            <FaHeart />
-          </button>
-
-          {/* User Profile */}
-          <button
-            className="p-2 bg-gray-100 text-teal-700 rounded-full hover:bg-gray-200"
-            onClick={() => setShowLogout(!showLogout)} // Toggle the logout options
+        {/* Icons with Rounded Buttons */}
+        <div className="flex items-center space-x-2 md:space-x-4 relative bg-teal-400 py-2 px-2 md:px-4 rounded-full">
+          {/* Home Button */}
+          <Link
+            to="/"
+            className="p-1 md:p-2 bg-white text-teal-700 rounded-full shadow-md hover:bg-gray-100"
           >
-            <FaUser />
+            <FaHome size={18} />
+          </Link>
+
+          {/* Payments Button */}
+          <Link
+            to="/payments"
+            className="p-1 md:p-2 bg-white text-teal-700 rounded-full shadow-md hover:bg-gray-100"
+          >
+            <FaCreditCard size={18} />
+          </Link>
+
+          {/* Favorites Button */}
+          <Link
+            to="/favorites"
+            className="p-1 md:p-2 bg-white text-teal-700 rounded-full shadow-md hover:bg-gray-100"
+          >
+            <FaHeart size={18} />
+          </Link>
+
+          {/* Search Button */}
+          <Link
+            to="/search"
+            className="p-1 md:p-2 bg-white text-teal-700 rounded-full shadow-md hover:bg-gray-100"
+          >
+            <FaSearch size={18} />
+          </Link>
+
+          {/* Profile Icon */}
+          <button
+            className="p-1 md:p-2 bg-white text-teal-700 rounded-full shadow-md hover:bg-gray-100 border-2 border-dashed border-white"
+            onClick={() => setShowLogout(!showLogout)}
+          >
+            <FaUser size={18} />
           </button>
 
           {/* Logout Dropdown */}

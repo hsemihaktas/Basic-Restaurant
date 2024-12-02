@@ -4,7 +4,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="py-8">
+    <footer className="py-8 border-t-2">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start">
         {/* Sol Kısım: Linkler ve Copyright */}
         <div className="flex flex-col space-y-4">

@@ -8,6 +8,7 @@ import MembershipPlans from "../components/HomePageMembershipPlans";
 import AttractionsArea from "../components/HomePageAttractionsArea";
 import HowItWorksSection from "../components/HomePageHowItWorksSection";
 import ShoppingArea from "../components/HomePageShoppingArea";
+import AppShowcase from "../components/HomePageAppShowcase";
 import HealthArea from "../components/HomePageHealthArea";
 import Footer from "../components/Footer"
 
@@ -52,6 +53,8 @@ const HomePage = () => {
 
       {/* ShoppingArea Gösterimi */}
       {categoriesToShow.includes("Shopping") && <ShoppingArea/>}
+
+      <AppShowcase />
 
       {/* HealthArea Gösterimi */}
       {categoriesToShow.includes("Health") && <HealthArea/>}

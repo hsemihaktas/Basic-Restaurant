@@ -5,10 +5,10 @@ import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="py-8 border-t-2">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start px-4 md:px-0">
         {/* Sol Kısım: Linkler ve Copyright */}
-        <div className="flex flex-col space-y-4">
-          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
+        <div className="flex flex-col space-y-4 md:space-y-0 md:w-1/2 text-center md:text-left">
+          <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 justify-center md:justify-start">
             <Link
               to="/about-us"
               className="text-gray-800 hover:underline transition"
@@ -41,12 +41,12 @@ const Footer = () => {
         </div>
 
         {/* Sağ Kısım: Sosyal Medya İkonları */}
-        <div className="flex space-x-4 mt-6 md:mt-0">
+        <div className="flex justify-center space-x-4 mt-6 md:mt-0 mx-auto">
           <a
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-teal-500 p-3 rounded-full text-white hover:bg-teal-600 transition"
+            className="bg-teal-500 p-3 rounded-full text-white hover:bg-teal-600 transition mb-4 md:mb-0"
           >
             <FaFacebook />
           </a>
@@ -54,7 +54,7 @@ const Footer = () => {
             href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-teal-500 p-3 rounded-full text-white hover:bg-teal-600 transition"
+            className="bg-teal-500 p-3 rounded-full text-white hover:bg-teal-600 transition mb-4 md:mb-0"
           >
             <FaTwitter />
           </a>
@@ -62,7 +62,7 @@ const Footer = () => {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-teal-500 p-3 rounded-full text-white hover:bg-teal-600 transition"
+            className="bg-teal-500 p-3 rounded-full text-white hover:bg-teal-600 transition mb-4 md:mb-0"
           >
             <FaInstagram />
           </a>
@@ -70,7 +70,7 @@ const Footer = () => {
             href="https://youtube.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-teal-500 p-3 rounded-full text-white hover:bg-teal-600 transition"
+            className="bg-teal-500 p-3 rounded-full text-white hover:bg-teal-600 transition mb-4 md:mb-0"
           >
             <FaYoutube />
           </a>

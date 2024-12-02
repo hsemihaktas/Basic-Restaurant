@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-teal-500 shadow-md">
+    <nav className="bg-white shadow-md">
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Logo */}
         <div className="flex items-center space-x-2">
@@ -28,7 +28,7 @@ const Navbar = () => {
           {/* Home Button */}
           <Link
             to="/"
-            className="p-1 md:p-2 bg-white text-teal-700 rounded-full shadow-md hover:bg-gray-100"
+            className="p-1 md:p-2 bg-white text-teal-700 rounded-full shadow-md hover:bg-teal-200 transition border-2 border-dashed border-white"
           >
             <FaHome size={18} />
           </Link>
@@ -36,7 +36,7 @@ const Navbar = () => {
           {/* Payments Button */}
           <Link
             to="/payments"
-            className="p-1 md:p-2 bg-white text-teal-700 rounded-full shadow-md hover:bg-gray-100"
+            className="p-1 md:p-2 bg-white text-teal-700 rounded-full shadow-md hover:bg-teal-200 transition border-2 border-dashed border-white"
           >
             <FaCreditCard size={18} />
           </Link>
@@ -44,7 +44,7 @@ const Navbar = () => {
           {/* Favorites Button */}
           <Link
             to="/favorites"
-            className="p-1 md:p-2 bg-white text-teal-700 rounded-full shadow-md hover:bg-gray-100"
+            className="p-1 md:p-2 bg-white text-teal-700 rounded-full shadow-md hover:bg-teal-200 transition border-2 border-dashed border-white"
           >
             <FaHeart size={18} />
           </Link>
@@ -52,14 +52,14 @@ const Navbar = () => {
           {/* Search Button */}
           <Link
             to="/search"
-            className="p-1 md:p-2 bg-white text-teal-700 rounded-full shadow-md hover:bg-gray-100"
+            className="p-1 md:p-2 bg-white text-teal-700 rounded-full shadow-md hover:bg-teal-200 transition border-2 border-dashed border-white"
           >
             <FaSearch size={18} />
           </Link>
 
           {/* Profile Icon */}
           <button
-            className="p-1 md:p-2 bg-white text-teal-700 rounded-full shadow-md hover:bg-gray-100 border-2 border-dashed border-white"
+            className="p-1 md:p-2 bg-white text-teal-700 rounded-full shadow-md hover:bg-teal-200 transition border-2 border-dashed border-white"
             onClick={() => setShowLogout(!showLogout)}
           >
             <FaUser size={18} />
@@ -70,7 +70,7 @@ const Navbar = () => {
             <div className="absolute top-full right-0 mt-2 p-2 bg-white shadow-md rounded-lg w-32">
               <button
                 onClick={handleLogout}
-                className="w-full text-left px-4 py-2 text-teal-700 hover:bg-gray-100 rounded-lg"
+                className="w-full text-left px-4 py-2 text-teal-700 hover:bg-teal-200 transition rounded-lg"
               >
                 Logout
               </button>

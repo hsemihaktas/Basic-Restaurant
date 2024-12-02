@@ -12,7 +12,7 @@ const HomePageMembershipPlans = () => {
         <div className="flex">
           <div className="mx-auto flex flex-wrap items-center justify-between">
             {/* Sol taraf: Yazılar ve kartlar */}
-            <div className="flex-1 w-full lg:w-3/4 text-white ml-10  py-8">
+            <div className="flex-1 w-full lg:w-3/4 text-white ml-10 py-8">
               {/* Başlık ve açıklama */}
               <h2 className="text-3xl font-bold mb-6">
                 Choose Your Membership & Start Saving
@@ -25,21 +25,21 @@ const HomePageMembershipPlans = () => {
               </p>
 
               {/* Kartlar */}
-              <div className="flex gap-4 justify-center">
+              <div className="flex gap-4 justify-center flex-wrap">
                 <img
                   src="/images/diamond-card.png"
                   alt="Diamond Card"
-                  className="w-full sm:w-36 max-w-xs"
+                  className="w-24 sm:w-36 lg:w-48 max-w-xs" // Küçük ekranda boyut küçültme
                 />
                 <img
                   src="/images/gold-card.png"
                   alt="Gold Card"
-                  className="w-full sm:w-36 max-w-xs"
+                  className="w-24 sm:w-36 lg:w-48 max-w-xs" // Küçük ekranda boyut küçültme
                 />
                 <img
                   src="/images/silver-card.png"
                   alt="Silver Card"
-                  className="w-full sm:w-36 max-w-xs"
+                  className="w-24 sm:w-36 lg:w-48 max-w-xs" // Küçük ekranda boyut küçültme
                 />
               </div>
             </div>

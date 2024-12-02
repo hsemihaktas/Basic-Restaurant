@@ -47,36 +47,36 @@ const HomePageFilterArea = ({ onMembershipChange }) => {
   return (
     <div className="-mt-16 text-white p-6 rounded-lg">
       {/* Üyelik Seçenekleri */}
-      <div className="flex justify-center space-x-8 mb-6 h-24">
+      <div className="flex justify-center space-x-4 lg:space-x-8 mb-6">
         <div
-          className={`flex w-48 items-center p-4 rounded-lg cursor-pointer font-bold bg-gray-500 text-white transform transition-transform duration-200 ${
-            selectedMembership === "Silver" ? "scale-125" : "scale-100"
+          className={`flex items-center justify-center w-32 h-20 lg:w-48 lg:h-24 p-4 rounded-lg cursor-pointer font-bold bg-gray-500 text-white transform transition-transform duration-200 ${
+            selectedMembership === "Silver" ? "scale-110" : "scale-100"
           }`}
           onClick={() => handleMembershipChange("Silver")}
         >
-          <h3>
+          <h3 className="text-center text-sm lg:text-base">
             Silver <br />
             Membership
           </h3>
         </div>
         <div
-          className={`flex w-48 items-center p-4 rounded-lg cursor-pointer font-bold bg-yellow-500 text-white transform transition-transform duration-200 ${
-            selectedMembership === "Gold" ? "scale-125" : "scale-100"
+          className={`flex items-center justify-center w-32 h-20 lg:w-48 lg:h-24 p-4 rounded-lg cursor-pointer font-bold bg-yellow-500 text-white transform transition-transform duration-200 ${
+            selectedMembership === "Gold" ? "scale-110" : "scale-100"
           }`}
           onClick={() => handleMembershipChange("Gold")}
         >
-          <h3>
+          <h3 className="text-center text-sm lg:text-base">
             Gold <br />
             Membership
           </h3>
         </div>
         <div
-          className={`flex w-48 items-center p-4 rounded-lg cursor-pointer font-bold bg-blue-500 text-white transform transition-transform duration-200 ${
-            selectedMembership === "Diamond" ? "scale-125" : "scale-100"
+          className={`flex items-center justify-center w-32 h-20 lg:w-48 lg:h-24 p-4 rounded-lg cursor-pointer font-bold bg-blue-500 text-white transform transition-transform duration-200 ${
+            selectedMembership === "Diamond" ? "scale-110" : "scale-100"
           }`}
           onClick={() => handleMembershipChange("Diamond")}
         >
-          <h3>
+          <h3 className="text-center text-sm lg:text-base">
             Diamond <br />
             Membership
           </h3>
@@ -84,7 +84,7 @@ const HomePageFilterArea = ({ onMembershipChange }) => {
       </div>
 
       {/* Filtreleme Seçenekleri */}
-      <div className="relative bg-white p-2 rounded-full border border-gray-300 w-1/2 lg:w-3/5 mx-auto">
+      <div className="relative bg-white p-2 rounded-full border border-gray-300 w-11/12 lg:w-3/5 mx-auto">
         {/* Oklar (Sadece küçük ekranlarda) */}
         <button
           className="absolute left-0 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-black z-10 lg:hidden"

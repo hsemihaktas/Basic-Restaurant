@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import { FaUtensils, FaCamera, FaShoppingBag, FaHeartbeat } from "react-icons/fa"; // İkonlar
+import React, { useState, useRef } from "react";
+import { FaUtensils, FaCamera, FaShoppingBag, FaHeartbeat } from "react-icons/fa";
+import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
 const HomePageFilterArea = ({ onMembershipChange }) => {
   const [selectedMembership, setSelectedMembership] = useState("Silver");
+  const filterContainerRef = useRef(null);
 
   // Tüm filtreler ve ikonları
   const allFilters = [
@@ -26,7 +28,20 @@ const HomePageFilterArea = ({ onMembershipChange }) => {
 
   const handleMembershipChange = (membership) => {
     setSelectedMembership(membership);
-    onMembershipChange(membership); // Parent bileşene seçimi gönder
+    onMembershipChange(membership);
+  };
+
+  // Kaydırma fonksiyonları
+  const scrollLeft = () => {
+    if (filterContainerRef.current) {
+      filterContainerRef.current.scrollBy({ left: -200, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (filterContainerRef.current) {
+      filterContainerRef.current.scrollBy({ left: 200, behavior: "smooth" });
+    }
   };
 
   return (
@@ -69,22 +84,47 @@ const HomePageFilterArea = ({ onMembershipChange }) => {
       </div>
 
       {/* Filtreleme Seçenekleri */}
-      <div className="bg-white p-2 rounded-full border border-gray-300 flex items-center justify-between w-1/2 mx-auto">
-        {allFilters.map((filter, index) => (
-          <React.Fragment key={filter.name}>
-            <button
-              className={`flex items-center justify-center w-full font-bold py-2 transition ${
-                getFilterColor(index)
-              }`}
-            >
-              <span className="text-xl mr-2">{filter.icon}</span>
-              <span>{filter.name}</span>
-            </button>
-            {index < allFilters.length - 1 && (
-              <div className="h-6 w-px bg-gray-300 mx-4"></div>
-            )}
-          </React.Fragment>
-        ))}
+      <div className="relative bg-white p-2 rounded-full border border-gray-300 w-1/2 lg:w-3/5 mx-auto">
+        {/* Oklar (Sadece küçük ekranlarda) */}
+        <button
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-black z-10 lg:hidden"
+          onClick={scrollLeft}
+        >
+          <IoChevronBack size={24} />
+        </button>
+        <button
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-black z-10 lg:hidden"
+          onClick={scrollRight}
+        >
+          <IoChevronForward size={24} />
+        </button>
+
+        {/* Filtreler */}
+        <div
+          ref={filterContainerRef}
+          className="flex items-center space-x-4 sm:space-x-8 overflow-x-auto scrollbar-hide px-8"
+          style={{
+            scrollbarWidth: "none", // Modern tarayıcılarda scrollbar gizleme
+            msOverflowStyle: "none", // IE ve eski tarayıcılarda scrollbar gizleme
+          }}
+        >
+          {allFilters.map((filter, index) => (
+            <React.Fragment key={filter.name}>
+              <button
+                className={`flex items-center justify-center w-full font-bold py-2 transition ${
+                  getFilterColor(index)
+                }`}
+              >
+                <span className="text-xl mr-2">{filter.icon}</span>
+                <span>{filter.name}</span>
+              </button>
+              {/* Aradaki dik çizgi */}
+              {index < allFilters.length - 1 && (
+                <div className="h-6 w-px bg-gray-300"></div>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
       </div>
     </div>
   );

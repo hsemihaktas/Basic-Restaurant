@@ -7,8 +7,7 @@
   npm install
 ```
 
-```
-Uygulamayı başlatmak için aşağıdaki kodu yazın.
+Uygulamayı başlatmak için aşağıdaki kodu yazım
 ```bash 
     npm start
 ```

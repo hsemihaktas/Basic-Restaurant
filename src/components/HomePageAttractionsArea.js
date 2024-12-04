@@ -15,7 +15,7 @@ const HomePageAttractionsArea = () => {
       navigate("/login");
     } else {
       // Token varsa restaurant verilerini çek
-      fetch("https://localhost:7181/api/Restaurant/GetAll", {
+      fetch("http://localhost:7181/api/Restaurant/GetAll", {
         method: "GET",
         headers: {
           Accept: "text/plain",
@@ -54,7 +54,7 @@ const HomePageAttractionsArea = () => {
                 {/* Link to restaurant details page */}
                 <Link to={`/detail/${restaurant.id}`}>
                   <img
-                    src={`https://localhost:7181${restaurant.imageURL}`} // Dynamically set the image URL
+                    src={`http://localhost:7181${restaurant.imageURL}`} // Dynamically set the image URL
                     alt={restaurant.name}
                     className="w-full h-48 object-cover object-bottom rounded-2xl"
                   />

@@ -26,7 +26,7 @@ const DetailPage = () => {
     const fetchRestaurantDetails = async () => {
       try {
         const response = await fetch(
-          `https://localhost:7181/api/Restaurant/GetDetail?id=${id}`,
+          `http://localhost:7181/api/Restaurant/GetDetail?id=${id}`,
           {
             method: "GET",
             headers: {

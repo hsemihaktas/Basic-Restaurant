@@ -43,7 +43,7 @@ const Footer = () => {
         {/* Sağ Kısım: Sosyal Medya İkonları */}
         <div className="flex justify-center space-x-4 mt-6 md:mt-0 mx-auto">
           <a
-            href="https://facebook.com"
+            href="http://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-teal-500 p-3 rounded-full text-white hover:bg-teal-600 transition mb-4 md:mb-0"
@@ -51,7 +51,7 @@ const Footer = () => {
             <FaFacebook />
           </a>
           <a
-            href="https://twitter.com"
+            href="http://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-teal-500 p-3 rounded-full text-white hover:bg-teal-600 transition mb-4 md:mb-0"
@@ -59,7 +59,7 @@ const Footer = () => {
             <FaTwitter />
           </a>
           <a
-            href="https://instagram.com"
+            href="http://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-teal-500 p-3 rounded-full text-white hover:bg-teal-600 transition mb-4 md:mb-0"
@@ -67,7 +67,7 @@ const Footer = () => {
             <FaInstagram />
           </a>
           <a
-            href="https://youtube.com"
+            href="http://youtube.com"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-teal-500 p-3 rounded-full text-white hover:bg-teal-600 transition mb-4 md:mb-0"

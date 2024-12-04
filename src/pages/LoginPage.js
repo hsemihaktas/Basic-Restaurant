@@ -11,7 +11,7 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://localhost:7181/api/Authentication', {
+      const response = await fetch('http://localhost:7181/api/Authentication', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
